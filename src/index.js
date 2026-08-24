@@ -25,7 +25,6 @@ import { initGemini } from "./utils/gemini.js";
 import { printTokenSummary } from "./utils/tokenTracker.js";
 import { buildGraph, createCheckpointer } from "./config/graph.js";
 
-// ─── HELPERS ────────────────────────────────────────────────
 
 function askUser(question) {
   const rl = readline.createInterface({
@@ -40,26 +39,6 @@ function askUser(question) {
   });
 }
 
-function printBanner() {
-  console.log("");
-  console.log("╔══════════════════════════════════════════════════════════╗");
-  console.log("║                                                          ║");
-  console.log("║    🤖  AI DEV TEAM — Multi-Agent Development System     ║");
-  console.log("║                                                          ║");
-  console.log("║    Phase 4: Full Dev Loop — AI Writes Code!             ║");
-  console.log("║    By: Coder Army × Claude                               ║");
-  console.log("║                                                          ║");
-  console.log("╚══════════════════════════════════════════════════════════╝");
-  console.log("");
-}
-
-function printSpec(spec) {
-  console.log("\n" + "═".repeat(60));
-  console.log("  📋 FINAL PROJECT SPECIFICATION");
-  console.log("═".repeat(60));
-  console.log(JSON.stringify(spec, null, 2));
-  console.log("═".repeat(60));
-}
 
 function printBlueprint(blueprint, validation) {
   console.log("\n" + "═".repeat(60));
