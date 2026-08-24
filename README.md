@@ -151,6 +151,3 @@ Every Gemini API call is wrapped with a token counter. You see exactly how many 
 
 ---
 
-## Built By
-
-**Coder Army** × **Claude** — February 2026
