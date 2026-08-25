@@ -133,17 +133,17 @@ export function buildGraph(options = {}) {
   graph.addEdge("setupSandbox", "sandboxHealthCheck");
 
   graph.addConditionalEdges("sandboxHealthCheck", sandboxHealthRouter, {
-    __end__: "selectNextTask",      // ← Phase 4 change! Was END
+    __end__: "selectNextTask",     
     setupSandbox: "setupSandbox",
   });
 
   // ─── EDGES: Phase 4 — Dev Loop ────────────────────────────
 
-  // Task selection → routes to contextBuilder, phaseVerification, or deploymentVerifier
+  //this defines after selectNextTask , routes to contextBuilder, phaseVerification, or deploymentVerifier depends on result of selectNextTaskRouter
   graph.addConditionalEdges("selectNextTask", selectNextTaskRouter, {
     contextBuilder: "contextBuilder",
     phaseVerification: "phaseVerification",
-    presentToUser: "deploymentVerifier",  // All done → verify deployment first
+    presentToUser: "deploymentVerifier",
   });
 
   // Build context → code → index → review
@@ -166,7 +166,6 @@ export function buildGraph(options = {}) {
     debuggerAgent: "debuggerAgent",
   });
 
-  // Snapshot → back to task selection
   graph.addEdge("snapshotManager", "selectNextTask");
 
   // Debug → fix/escalate (fix goes through contextBuilder for fresh context)
@@ -202,7 +201,7 @@ export function buildGraph(options = {}) {
     debuggerAgent: "debuggerAgent",
   });
 
-  // ─── COMPILE ──────────────────────────────────────────────
+  // ─── COMPILE ───
 
   const saver = checkpointer || new MemorySaver();
   const compiled = graph.compile({ checkpointer: saver });

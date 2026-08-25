@@ -97,17 +97,16 @@ function printBlueprint(blueprint, validation) {
   console.log("     Planner Agent in Phase 3.\n");
 }
 
-// ─── MAIN ───────────────────────────────────────────────────
 
 async function main() {
-  printBanner();
+ 
 
   // 1. Initialize Gemini
   try {
     initGemini(process.env.GEMINI_API_KEY);
-    console.log(`✅ Gemini initialized (model: ${process.env.GEMINI_MODEL || "gemini-2.5-flash"})`);
+    console.log(` Gemini initialized (model: ${process.env.GEMINI_MODEL || "gemini-2.5-flash"})`);
   } catch (error) {
-    console.error(`❌ ${error.message}`);
+    console.error(` ${error.message}`);
     console.error("   Create a .env file with GEMINI_API_KEY=your_key");
     process.exit(1);
   }

@@ -134,7 +134,7 @@ export const AgentState = Annotation.Root({
     }),
   }),
 
-  // ─── SANDBOX ──────────────────────────────────────────────
+  // ─── SANDBOX ───────────
   sandboxId: Annotation({
     reducer: (_, y) => y ?? "",
     default: () => "",
@@ -145,7 +145,7 @@ export const AgentState = Annotation.Root({
     default: () => false,
   }),
 
-  // ─── DEV LOOP (Phase 4) ──────────────────────────────────
+  // ─── DEV LOOP (Phase 4) ─────
   // The currently active task(s)
   currentTask: Annotation({
     reducer: (_, y) => y ?? null,
