@@ -46,7 +46,7 @@ class InputBridge {
     this._resolver = null;
     this._pendingType = null;
     this._pendingPayload = null;
-    this._emitFn = null; // Set by graphRunner to emit WS events
+    this._emitFn = null; 
   }
 
   /** Set the emit function so bridge can notify the dashboard */

@@ -161,9 +161,7 @@ export async function coderAgentNode(state) {
     }
   }
 
-  // ═══════════════════════════════════════════════════════
   // ONE FILE PER LLM CALL
-  // ═══════════════════════════════════════════════════════
 
   const allWrittenFiles = [];
   let totalTokens = { input: 0, output: 0, cost: 0 };

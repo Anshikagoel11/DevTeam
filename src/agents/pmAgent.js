@@ -65,7 +65,7 @@ RULES:
 - The spec should be COMPLETE enough for an architect to design the database and APIs from it.`;
 
 export async function pmAgentNode(state) {
-  console.log("\n🤖 [PM Agent] Analyzing requirement...\n");
+  console.log("\n[PM Agent] Analyzing requirement...\n");
 
   let userPrompt;
 
@@ -102,10 +102,10 @@ export async function pmAgentNode(state) {
   const tokenDelta = makeTokenDelta("pmAgent", result.tokens);
 
   if (response.status === "needs_clarification") {
-    console.log("❓ [PM Agent] Need more info. Questions:");
+    console.log(" [PM Agent] Need more info. Questions:");
     response.questions.forEach((q, i) => console.log(`   ${i + 1}. ${q}`));
     if (response.assumptions?.length) {
-      console.log("\n   📌 Assumptions made:");
+      console.log("\n   Assumptions made:");
       response.assumptions.forEach((a) => console.log(`   - ${a}`));
     }
 

@@ -25,11 +25,7 @@ export function getClient() {
   return aiClient;
 }
 
-/**
- * Attempt to repair truncated JSON by closing unclosed brackets/braces/strings
- * This is a best-effort heuristic — won't always work, but catches the common
- * case of Gemini cutting off mid-file-content string.
- */
+
 function repairTruncatedJSON(text) {
   let cleaned = text.trim();
 

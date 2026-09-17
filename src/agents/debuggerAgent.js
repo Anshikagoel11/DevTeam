@@ -36,14 +36,14 @@ RULES:
 
 export async function debuggerAgentNode(state) {
   const debugState = state.debugState || { tier: 1, attempts: 0, maxAttempts: 3, rollbackAttempted: false };
-  console.log(`\n🐛 [Debugger] Analyzing error (Tier ${debugState.tier}, Attempt ${debugState.attempts + 1})...\n`);
+  console.log(`\n [Debugger] Analyzing error (Tier ${debugState.tier}, Attempt ${debugState.attempts + 1})...\n`);
 
   const { currentTask, executionResult, sandboxId } = state;
   const errors = executionResult?.errors || "Unknown error";
 
   // Tier 2.5: Rollback attempt
   if (debugState.tier === 2 && debugState.attempts >= 2 && !debugState.rollbackAttempted) {
-    console.log("   🔄 Tier 2.5: Attempting rollback to last good snapshot...");
+    console.log("Tier 2.5: Attempting rollback to last good snapshot...");
     
     // Find last successful task's tag
     const taskStatuses = state.taskStatuses || {};
@@ -56,7 +56,7 @@ export async function debuggerAgentNode(state) {
       const rbResult = rollback(sandboxId, lastGoodTag);
       
       if (rbResult.success) {
-        console.log(`   ✅ Rolled back to ${lastGoodTag}. Retrying task from scratch.`);
+        console.log(`  Rolled back to ${lastGoodTag}. Retrying task from scratch.`);
         return {
           debugState: { ...debugState, rollbackAttempted: true, tier: 1, attempts: 0 },
           reviewResult: { verdict: "", issues: [], reviewCycle: 0 },
@@ -65,7 +65,7 @@ export async function debuggerAgentNode(state) {
       }
     }
     
-    console.log("   ⚠️ Rollback failed or no good snapshots. Escalating to human.");
+    console.log("   Rollback failed or no good snapshots. Escalating to human.");
     return {
       debugState: { ...debugState, rollbackAttempted: true, tier: 3 },
     };
@@ -73,7 +73,7 @@ export async function debuggerAgentNode(state) {
 
   // Tier 3: Escalate to human
   if (debugState.tier >= 3 || (debugState.tier === 2 && debugState.attempts >= 2)) {
-    console.log("   🆘 Escalating to human — debugger exhausted all options");
+    console.log("  Escalating to human — debugger exhausted all options");
     return {
       debugState: { ...debugState, tier: 3 },
     };
@@ -129,9 +129,9 @@ export async function debuggerAgentNode(state) {
   }
 
   const debug = result.parsed;
-  console.log(`   🔍 Root cause: ${debug.rootCause}`);
-  console.log(`   🔧 Fix: ${debug.fix}`);
-  console.log(`   📊 Confidence: ${debug.confidence}`);
+  console.log(` Root cause: ${debug.rootCause}`);
+  console.log(` Fix: ${debug.fix}`);
+  console.log(` Confidence: ${debug.confidence}`);
 
   // Promote to next tier if low confidence or multiple attempts
   const newAttempts = debugState.attempts + 1;

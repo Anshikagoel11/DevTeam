@@ -1,16 +1,3 @@
-/**
- * architectAgent.js — Architect Agent (5 Steps)
- * 
- * NAMING CONVENTION (enforced across all steps):
- * - Entity names: PascalCase → User, TodoItem, Category
- * - Table names: snake_case plural → users, todo_items, categories
- * - API paths: kebab-case plural → /api/users, /api/todo-items
- * - File names: camelCase → userModel.js, todoItemRoutes.js
- * - DB fields: snake_case → created_at, password_hash, user_id
- * - JS variables: camelCase → createdAt, passwordHash, userId
- * 
- * Step 1 generates the naming map. Steps 2-5 receive it and MUST follow it.
- */
 
 import { safeCallGemini, callGemini, makeTokenDelta, emptyTokenDelta } from "../utils/gemini.js";
 
@@ -23,9 +10,7 @@ STRICT NAMING CONVENTION (you MUST follow this):
 - Foreign key format: "table_name(field)" (e.g., "users(id)")
 `;
 
-// ═══════════════════════════════════════════════════════════════
 // STEP 1: Identify Entities & Relationships + Naming Map
-// ═══════════════════════════════════════════════════════════════
 
 const STEP1_PROMPT = `You are the Architect Agent in an AI software development team.
 
@@ -85,9 +70,7 @@ export async function architectStep1Node(state) {
   };
 }
 
-// ═══════════════════════════════════════════════════════════════
 // STEP 2: Design Database Schema
-// ═══════════════════════════════════════════════════════════════
 
 const STEP2_PROMPT = `You are the Architect Agent designing the database schema.
 
@@ -162,9 +145,7 @@ export async function architectStep2Node(state) {
   };
 }
 
-// ═══════════════════════════════════════════════════════════════
 // STEP 3: Design API Endpoints
-// ═══════════════════════════════════════════════════════════════
 
 const STEP3_PROMPT = `You are the Architect Agent designing REST API endpoints.
 
@@ -232,9 +213,8 @@ export async function architectStep3Node(state) {
   };
 }
 
-// ═══════════════════════════════════════════════════════════════
 // STEP 4: Design Frontend Pages
-// ═══════════════════════════════════════════════════════════════
+
 
 const STEP4_PROMPT = `You are the Architect Agent designing frontend pages.
 
@@ -293,9 +273,7 @@ export async function architectStep4Node(state) {
   };
 }
 
-// ═══════════════════════════════════════════════════════════════
 // STEP 5: Folder Structure + Dependencies
-// ═══════════════════════════════════════════════════════════════
 
 const STEP5_PROMPT = `You are the Architect Agent generating project structure and dependencies.
 

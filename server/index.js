@@ -24,7 +24,6 @@ import express from "express";
 import cors from "cors";
 import { createServer } from "http";
 import { WebSocketServer } from "ws";
-
 import { initGemini } from "../src/utils/gemini.js";
 import projectRoutes from "./routes/projects.js";
 import { initWebSocket } from "./ws/handler.js";
@@ -32,7 +31,6 @@ import { initWebSocket } from "./ws/handler.js";
 const PORT = process.env.SERVER_PORT || 3000;
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
-// ─── Express App ─────────────────────────────────────────────
 
 const app = express();
 
@@ -73,7 +71,7 @@ const wss = new WebSocketServer({
 
 initWebSocket(wss);
 
-// ─── Startup ─────────────────────────────────────────────────
+// ─── Startup ───────────────────────
 
 async function start() {
   console.log("");

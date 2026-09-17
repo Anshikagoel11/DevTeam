@@ -14,6 +14,7 @@ import LogStream from "./components/LogStream";
 import OutputPanel from "./components/OutputPanel";
 import HumanInputPanel from "./components/HumanInputPanel";
 import TokenBudgetBar from "./components/TokenBudgetBar";
+import toast from "react-hot-toast";
 
 export default function App() {
   const [requirementInput, setRequirementInput] = useState("");
@@ -38,9 +39,9 @@ export default function App() {
       const result = await createProject(requirementInput.trim());
       setProject(result.projectId, requirementInput.trim());
       setRequirementInput("");
-    } catch (e) {
-      alert(`Failed to start project: ${e.message}`);
-    } finally {
+    }  catch (e) {
+  toast.error("Insufficient tokens. Please configure an API key to continue.");
+} finally {
       setIsStarting(false);
     }
   }, [requirementInput, setProject]);
