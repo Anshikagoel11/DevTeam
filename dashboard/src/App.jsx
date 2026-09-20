@@ -108,7 +108,7 @@ export default function App() {
                   We build it.
                 </h1>
                 <p className="landing-desc">
-                  27 specialized agents — PM, Architect, Planner, Coder, 
+                  9+ specialized agents — PM, Architect, Planner, Coder, 
                   Reviewer, Executor, Debugger — working in concert. 
                   From a single sentence to a deployed application.
                 </p>
