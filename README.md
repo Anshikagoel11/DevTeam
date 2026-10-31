@@ -34,27 +34,31 @@ The backend uses **Google Gemini** for AI-powered tasks, while the React dashboa
   <tr>
     <td width="50%" align="center">
       <strong>Mission Control Dashboard</strong><br/><br/>
-      <img src="docs/screenshots/dashboard.png" width="100%" alt="Mission Control Dashboard"/>
+      <img width="1527" height="701" alt="image" src="https://github.com/user-attachments/assets/c9cb056e-9ef2-4e0d-a5a8-d4848940ac4b" />
     </td>
     <td width="50%" align="center">
       <strong>Project Creation</strong><br/><br/>
-      <img src="docs/screenshots/project-creation.png" width="100%" alt="Project Creation"/>
+      <img width="931" height="692" alt="image" src="https://github.com/user-attachments/assets/f12c669d-4ebd-4b09-86fb-217cec6f3e8f" />
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
       <strong>Agent Workflow</strong><br/><br/>
-      <img src="docs/screenshots/agent-workflow.png" width="100%" alt="Agent Workflow"/>
+     <img width="652" height="483" alt="image" src="https://github.com/user-attachments/assets/91aae2de-1320-41c6-89dc-b05d3f213389" />
     </td>
     <td width="50%" align="center">
       <strong>Execution &amp; Logs</strong><br/><br/>
-      <img src="docs/screenshots/execution-logs.png" width="100%" alt="Execution and Logs"/>
+      <img width="503" height="288" alt="image" src="https://github.com/user-attachments/assets/c5440fda-6514-42a0-8f56-ea2152f458d0" />
+
+      <img width="620" height="445" alt="image" src="https://github.com/user-attachments/assets/5978d79c-889b-43bf-ab2b-82cd4ae61a7d" />
+
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
       <strong>Code Review</strong><br/><br/>
-      <img src="docs/screenshots/code-review.png" width="100%" alt="Code Review"/>
+     <img width="640" height="472" alt="image" src="https://github.com/user-attachments/assets/66c2078f-0296-4114-b6b3-ba1a0f66f1b4" />
+
     </td>
     <td width="50%" align="center">
       <strong>Project Results</strong><br/><br/>
@@ -220,26 +224,6 @@ npm run server
 # Terminal 2 — Frontend
 npm run dashboard
 ```
-
----
-
-## 🧪 Testing
-
-Run the relevant tests from the project root:
-
-```bash
-npm run test:graph
-npm run test:pm
-npm run test:architect
-npm run test:validator
-npm run test:planner
-npm run test:sandbox
-npm run test:devloop
-npm run test:all:mock
-```
-
-Tests requiring Gemini or external services may need API keys and services configured.
-
 ---
 
 ## 📂 Project Structure
@@ -312,16 +296,6 @@ AIDevFinal/
 9. **Execution:** Approved changes proceed to execution.
 10. **Debugging:** Failed executions are routed to the Debugger Agent.
 11. **Iteration:** The workflow tracks feedback, snapshots, and deployment verification.
-
----
-
-## 🔐 Environment & Security
-
-- Keep API keys and credentials in environment variables.
-- Never commit `.env` files, tokens, or generated secrets.
-- Configure CORS with the correct dashboard origin.
-- Use appropriate isolation when executing generated code.
-- Review generated code and deployment settings before production use.
 
 ---
 
