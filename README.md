@@ -49,18 +49,12 @@ The backend uses **Google Gemini** for AI-powered tasks, while the React dashboa
     <td width="50%" align="center">
       <strong>Execution &amp; Logs</strong><br/><br/>
       <img width="503" height="288" alt="image" src="https://github.com/user-attachments/assets/c5440fda-6514-42a0-8f56-ea2152f458d0" />
-      <img width="620" height="445" alt="image" src="https://github.com/user-attachments/assets/5978d79c-889b-43bf-ab2b-82cd4ae61a7d" />
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
       <strong>Code Review</strong><br/><br/>
      <img width="640" height="472" alt="image" src="https://github.com/user-attachments/assets/66c2078f-0296-4114-b6b3-ba1a0f66f1b4" />
-
-    </td>
-    <td width="50%" align="center">
-      <strong>Project Results</strong><br/><br/>
-      <img src="docs/screenshots/project-results.png" width="100%" alt="Project Results"/>
     </td>
   </tr>
 </table>
